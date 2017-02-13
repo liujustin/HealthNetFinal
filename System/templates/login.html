@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<!--
+	Telephasic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Telephasic by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="../static/assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+<body class="no-sidebar">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header-wrapper">
+        <div id="header" class="container">
+
+            <!-- Logo -->
+            <h1 id="logo"><a href="index.html">Home</a></h1>
+
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="wrapper">
+        <div class="container" id="main">
+            <h2>Login</h2>
+
+        </div>
+    </div>
+
+    <form class="form-horizontal" action="/login" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label">
+                Username
+            </label>
+            <div class="col-xs-3">
+                <input type="text" pattern="[A-Za-z@.+-_]{0,30}" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">
+                Password
+            </label>
+            <div class="col-xs-3">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-5 control-label form-group" style="color: red; margin-bottom: 10px"> Don't have an account?
+            <a href="/registration">Create one!</a>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Footer -->
+    <div id="footer-wrapper">
+        <div id="copyright" class="container">
+            <ul class="menu">
+                <li>&copy; HealthNet. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/jquery.dropotron.min.js"></script>
+<script src="../static/assets/js/skel.min.js"></script>
+<script src="../static/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../static/assets/js/main.js"></script>
+
+</body>
+</html>
